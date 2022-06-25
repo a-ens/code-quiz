@@ -1,0 +1,43 @@
+
+
+body {
+    background-color: darkslategray;
+    width: 100%;
+    align-content: center;
+    display: flex;
+}
+
+#center {
+    margin: auto;
+    height: 400px;
+    width: 60%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 25px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+}
+
+#quiz {
+    height: 70%;
+    width: 80%;
+    border-style: solid;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+    background-color: darkslateblue;
+    color: antiquewhite;
+}
+
+#begin {
+    height: 20px;
+    width: 30%;
+    margin: auto;
+}
