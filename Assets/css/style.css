@@ -37,7 +37,8 @@ button {
 }
 
 #begin {
-    height: 20px;
+    height: 40px;
     width: 30%;
     margin: auto;
+    border-radius: 25px;
 }
