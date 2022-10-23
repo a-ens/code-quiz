@@ -1,4 +1,4 @@
-// Qs source: https://www.proprofs.com/quiz-school/story.php?title=compro_12zi
+// Qs source: https://www.proprofs.com/quiz-school/story.php?title=compro_12zi (with edits for accuracy and clarity)
 // Array containing questions
 const quizQuestions = [
   {
@@ -86,7 +86,7 @@ const clearScoresBtn = document.getElementById("clear-scores-btn")
 const previousAnswerEl = document.getElementById("previous-answer")
 beginButtonEl.addEventListener("click", startQuiz)
 
-
+// Declaring some global variables
 let questionPosition = 0;
 let timeLeft;
 let currentScore = 0;
@@ -117,6 +117,7 @@ function startQuiz() {
   displayCurrentQuestion();
 };
 
+// Pulls the data from the current question and displays it
 function displayCurrentQuestion () {
     questionText.textContent = quizQuestions[questionPosition].question;
     optionAEl.textContent = quizQuestions[questionPosition].options[0]
@@ -125,6 +126,7 @@ function displayCurrentQuestion () {
     optionDEl.textContent = quizQuestions[questionPosition].options[3]
 }
 
+// Function assesses whether the answer entered was correct and acts accordingly
 function checkAnswer (choice) {
     previousAnswerEl.style.display = "block"
 
@@ -147,6 +149,7 @@ function checkAnswer (choice) {
     }
 }
 
+// Function displays highscore entry page
 function endQuiz () {
     startContainer.style.display = "none";
     questionContainer.style.display = "none";
@@ -156,6 +159,7 @@ function endQuiz () {
     finalScoreEl.textContent = currentScore;
 }
 
+// Function stores initials among highscores
 function recordHighScore (event) {
     event.preventDefault();
 
@@ -186,29 +190,29 @@ function recordHighScore (event) {
     displayHighScores();
 }
 
+// Shows saved highscores
 function displayHighScores () {
-
     startContainer.style.display = "none";
     questionContainer.style.display = "none";
     scoreContainer.style.display = "none";
     highscoreContainer.style.display = "block";
 
     let savedScores = localStorage.getItem("high scores")
-
     if (!savedScores) {
         return;
     }
 
     let storedScores = JSON.parse(savedScores);
-
     for (i = 0; i < storedScores.length; i++) {
         let singleScore = document.createElement("p")
         highscoreslistEl.innerHTML = "Highscores:"
         singleScore.innerHTML = storedScores[i].initials + ": " + storedScores[i].score;
         highscoreslistEl.appendChild(singleScore)
     }
-}
+};
 
+
+// All the button listeners and functions to go with them
 beginButtonEl.addEventListener("click", startQuiz);
 optionAEl.addEventListener("click", function(event){checkAnswer(0)});
 optionBEl.addEventListener("click", function(event){checkAnswer(1)});
