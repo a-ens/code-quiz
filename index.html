@@ -9,25 +9,42 @@
     </head>
     <body>
         <div id="center">
+            
             <div id="filling">
                 <!-- Start Page -->
-                <div id="startDiv" style="display: none;">
+                <div id="start" >
+                    <a id="view-scores-link">View Highscores</a>
                     <h2>Coding Quiz</h2>
                     <p>Want to test your knowledge on the basics of coding by taking this coding quiz? You will start with 60 seconds on the clock, and 5 seconds will be deducted for each wrong answer. Good luck!
                     </p>
                     <button type="button" id="begin-button">Begin the Quiz</button>
                 </div>
                 <!-- Question Page -->
-                <div id="questionDiv">
-                <!-- style="display: none;" -->
-                    <p id="timer">Time Left: 60</p>
+                <div id="question" style="display: none;">
+                    <span id="timer">Time Left: 60</span>
                     <p id="questionTitle">HTML stands for HyperText __________ Language.</p>
-                    <button class="option-button" id="option-a">Market</button>
-                    <button class="option-button" id="option-b">Markup</button>
-                    <button class="option-button" id="option-c">Marker</button>
-                    <button class="option-button" id="option-d">Marking</button>
+                    <button class="option-button" id="option-a" data-answer="a">Market</button>
+                    <button class="option-button" id="option-b" data-answer="b">Markup</button>
+                    <button class="option-button" id="option-c" data-answer="c">Marker</button>
+                    <button class="option-button" id="option-d" data-answer="d">Marking</button>
                     <hr id="lineBreak">
-                    <p id="previousAnswer">Incorrect, the previous answer was: Markup</p>
+                    <p id="previous-answer">Incorrect, the previous answer was: Markup</p>
+                </div>
+                <!-- User Score Display -->
+                <div id="my-score-page" style="display: none;">
+                    <h2 class="font-weight-bold pt-2 pb-3 m-2">Your final score is <span id="final-score"></span> !</h2>
+                    <form>
+                    <p>Enter your initials: <input id="initials-input" type="text"></p>
+                    <button type="submit" id="submit-initials" href="./highscores.html">Submit</button></a>
+                    </form>
+                </div>
+                <!-- Highscores List -->
+                <div id="highscores-page" style="display: none;">
+                    <div id="highscore-list"></div>
+                    <div id="highscore-btns-container">
+                        <button type="submit" id="back-to-start-btn">Go Back</button>
+                        <button type="submit" id="clear-scores-btn">Clear High Scores</button>
+                    </div>
                 </div>
             </div>
         </div>
